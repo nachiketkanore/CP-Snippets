@@ -1,0 +1,8 @@
+Algorithm Gym :: Data structures
+https://codeforces.com/blog/entry/15729
+
+Algorithm Gym :: Everything About Segment Trees
+https://codeforces.com/blog/entry/15890
+
+Algorithm Gym :: Graph Algorithms
+https://codeforces.com/blog/entry/16221

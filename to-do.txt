@@ -1,0 +1,21 @@
+Links to repo of snippets to refer
+
+
+https://codeforces.com/blog/entry/18051
+https://github.com/sslotin/algo/blob/master/segtree_dynamic.cpp
+https://github.com/sslotin/algo
+https://github.com/Ashishgup1/Competitive-Coding/
+https://github.com/stjepang/snippets 
+////////////////
+
+nCr mod p - Lucas
+nCr mod p - Fermat
+nPr mod prime
+mod Inverse - done
+Euler totient phi function - done
+factorial mod p - done
+Z-function
+X^Y in log(Y) - done
+X^Y mod p in log(Y) - done
+Check prime in root(N) - done
+Totient - precomputed - find online/check
