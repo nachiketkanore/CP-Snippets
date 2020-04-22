@@ -18,15 +18,24 @@ int32_t main(){
     int files = 5;
     for(int i = 0; i < files; i++){
     	string file_name = "input" + to_string(i) + ".txt";
-        
-        /* Just for creating blank files
+
+            // PART 1 : (comment 2 , and execute this cpp file,
+             //           it will create blank input files, then we write to them)
+        /* 
+        Just for creating blank files
         std::ofstream myfile { file_name };
         myfile.close();
         */
 
+            // PART 2 : (after completing part1, comment 1, uncomment 2)
         ofstream myfile (file_name);
           if (myfile.is_open())
-          {
+          { 
+            /*
+                Write input file contents here
+                Use endl instead of '\n'
+
+            */
             int n = 1 + rand() % 10;
             myfile << n << endl;
             for(int j = 0; j < n; j++)
