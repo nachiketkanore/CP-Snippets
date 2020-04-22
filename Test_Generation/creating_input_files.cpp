@@ -16,27 +16,21 @@ int32_t main(){
     srand(time(NULL));
 
     int files = 5;
+    //1. Creating empty input files
     for(int i = 0; i < files; i++){
-    	string file_name = "input" + to_string(i) + ".txt";
-
-            // PART 1 : (comment 2 , and execute this cpp file,
-             //           it will create blank input files, then we write to them)
-        /* 
-        Just for creating blank files
+        string file_name = "input" + to_string(i) + ".txt";
         std::ofstream myfile { file_name };
         myfile.close();
-        */
+    }
 
-            // PART 2 : (after completing part1, comment 1, uncomment 2)
+    //2. Writing testdata to input files
+    for(int i = 0; i < files; i++){
+        string file_name = "input" + to_string(i) + ".txt";
+
         ofstream myfile (file_name);
-          if (myfile.is_open())
-          { 
-            /*
-                Write input file contents here
-                Use endl instead of '\n'
+          if (myfile.is_open()){ 
 
-            */
-            int n = 1 + rand() % 10;
+            int n = 1 + rand() % 100;
             myfile << n << endl;
             for(int j = 0; j < n; j++)
                 myfile << (1 + rand() % n) << " ";
