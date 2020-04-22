@@ -5,6 +5,8 @@ using namespace std;
 
 const int N = 1e6, inf = 1e18, mod = 1e9 + 7;
 
+void Create(string);
+
 int32_t main(){
     ios::sync_with_stdio(false);
     cin.tie(NULL); cout.tie(NULL);  
@@ -26,16 +28,18 @@ int32_t main(){
     //2. Writing testdata to input files
     for(int i = 0; i < files; i++){
         string file_name = "input" + to_string(i) + ".txt";
-
-        ofstream myfile (file_name);
-          if (myfile.is_open()){ 
-
-            int n = 1 + rand() % 100;
-            myfile << n << endl;
-            for(int j = 0; j < n; j++)
-                myfile << (1 + rand() % n) << " ";
-            myfile.close();
-          }
-          else cout << "Unable to open file";
+        Create(file_name);
     }
+}
+
+void Create(string file_name){
+    ofstream cout(file_name);
+    if(cout.is_open() == false) return;
+    //Write the input testdata using stdout
+
+    int n = 1 + rand() % 20;
+    cout << n << endl;
+    for(int j = 0; j < n; j++)
+        cout << (1 + rand() % n) << " ";
+    cout.close();
 }
