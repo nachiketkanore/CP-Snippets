@@ -29,6 +29,10 @@ int go(int pos, bool bigA, bool smallB, int cnt){
 }
 
 int32_t main(){
+    #ifndef ONLINE_JUDGE
+	freopen("input.txt","r",stdin);
+	freopen("output.txt","w",stdout);
+	#endif
     
     int t;
     cin >> t;
