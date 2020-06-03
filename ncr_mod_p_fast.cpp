@@ -1,42 +1,25 @@
-#include<bits/stdc++.h>
-using namespace std;
-
-const int N = 1e6 + 5, mod = 1e9 + 7;
-int factMod[N];
-
-int power(int a, int b, int p = mod){
-	int ret = 1;
-	a %= p;
-	while(b > 0){
-		if(b % 2 == 1)
-			ret = ret * a % p;
-		b /= 2;
-		a = a * a % p;
+long long modpow(long long a, long long b, long long m) {
+	long long p = 1, q = a;
+	for (int i = 0; i < 32; i++) {
+		if ((b / (1LL << i)) % 2 == 1) { p *= q; p %= m; }
+		q *= q; q %= m;
 	}
-	return ret;
+	return p;
 }
-
-int modInverse(int n, int p){
-	return power(n, p-2, p);
+ 
+long long Div(long long a, long long b, long long m) {
+	return (a * modpow(b, m - 2, m)) % m;
 }
-
-void pre(int p = mod){
-	factMod[0] = factMod[1] = 1;
-	for(int i = 2; i < N; i++)
-		factMod[i] = i * factMod[i-1] % p;
-
+ 
+long long mod = 998244353;
+long long fact[1 << 19], factinv[1 << 19];
+ 
+void init() {
+	fact[0] = 1;
+	for (int i = 1; i <= 400000; i++) fact[i] = (1LL * i * fact[i - 1]) % mod;
+	for (int i = 0; i <= 400000; i++) factinv[i] = Div(1, fact[i], mod);
 }
-
-int calc(int n, int r, int p = mod){
-	if(r == 0)
-		return 1;
-
-	int ans = (factMod[n]* modInverse(factMod[r], p) % p * modInverse(factMod[n-r], p) % p) % p; 
-	return ans;
-}
-
-int main(){
-	pre();
-	int n = 10, r = 2, p = 13;
-	cout << calc(n,r,p);
+ 
+long long ncr(long long n, long long r) {
+	return (fact[n] * factinv[r] % mod) * factinv[n - r] % mod;
 }
