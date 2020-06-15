@@ -1,5 +1,16 @@
 //Problem : https://codeforces.com/problemset/problem/1324/F
 
+/*
+Basic Idea :
+1. Root the tree at some node (say 1).
+2. Calculate DP considering 1 as root.
+3. When we shift root from 1 to one of its child, only DP[1] and DP[child] change.
+4. Remove contribution of child from par, then add contribution of par to child. (order is imp)
+5. Now DP[child] is answer considering child as root.
+6. Don't forget to reassign old values when you exit from a subtree.
+
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 
