@@ -1,141 +1,55 @@
-// Solution to https://codeforces.com/contest/220/problem/B
-#include <algorithm>
-#include <cassert>
-#include <cmath>
-#include <iostream>
-#include <vector>
-using namespace std;
+const int N = 2e5 + 5;
+const int Q = 2e5 + 5;
+const int M = 1e6 + 5;
+const int SZ = sqrt(N) + 1;
 
-using mo_value = int;
-using mo_answer = int;
+struct data
+{
+	int l, r, idx;
+}qr[Q];
 
-struct mo_state {
-    static const int N_MAX = 1e5 + 5;
+int n, q, a[N];
+int freq[M];
+long long ans[Q];
+long long cur = 0;
 
-    int freq[N_MAX] = {0};
-    int count = 0;
-
-    void add_left(const mo_value &x) {
-        if (x <= 0 || x >= N_MAX) return;
-        if (freq[x] == x) count--;
-        freq[x]++;
-        if (freq[x] == x) count++;
-    }
-
-    void add_right(const mo_value &x) {
-        add_left(x);
-    }
-
-    void remove_left(const mo_value &x) {
-        if (x <= 0 || x >= N_MAX) return;
-        if (freq[x] == x) count--;
-        freq[x]--;
-        if (freq[x] == x) count++;
-    }
-
-    void remove_right(const mo_value &x) {
-        remove_left(x);
-    }
-
-    mo_answer get_answer() const {
-        return count;
-    }
-};
-
-struct mo_query {
-    int start, end, block, index;
-
-    mo_query() : start(0), end(0) {}
-
-    mo_query(int _start, int _end) : start(_start), end(_end) {}
-
-    bool operator<(const mo_query &other) const {
-        if (block != other.block)
-            return block < other.block;
-
-        return block % 2 == 0 ? end < other.end : end > other.end;
-    }
-};
-
-struct mo {
-    int n, block_size;
-    vector<mo_value> values;
-
-    mo(vector<mo_value> initial = {}) {
-        if (!initial.empty())
-            init(initial);
-    }
-
-    void init(const vector<mo_value> &initial) {
-        values = initial;
-        n = values.size();
-        block_size = 1.6 * sqrt(n) + 1;
-    }
-
-    void update_state(mo_state &state, const mo_query &first, const mo_query &second) const {
-        if (max(first.start, second.start) >= min(first.end, second.end)) {
-            for (int i = first.start; i < first.end; i++)
-                state.remove_left(values[i]);
-
-            for (int i = second.start; i < second.end; i++)
-                state.add_right(values[i]);
-
-            return;
-        }
-
-        for (int i = first.start - 1; i >= second.start; i--)
-            state.add_left(values[i]);
-
-        for (int i = first.end; i < second.end; i++)
-            state.add_right(values[i]);
-
-        for (int i = first.start; i < second.start; i++)
-            state.remove_left(values[i]);
-
-        for (int i = first.end - 1; i >= second.end; i--)
-            state.remove_right(values[i]);
-    }
-
-    vector<mo_answer> solve(vector<mo_query> queries) const {
-        for (int i = 0; i < (int) queries.size(); i++) {
-            queries[i].index = i;
-            queries[i].block = queries[i].start / block_size;
-        }
-
-        sort(queries.begin(), queries.end());
-        mo_state state;
-        mo_query last_query;
-        vector<mo_answer> answers(queries.size());
-
-        for (mo_query &q : queries) {
-            update_state(state, last_query, q);
-            answers[q.index] = state.get_answer();
-            last_query = q;
-        }
-
-        return answers;
-    }
-};
-
-
-int main() {
-    int N, Q;
-    scanf("%d %d", &N, &Q);
-    vector<mo_value> A(N);
-
-    for (mo_value &a : A)
-        scanf("%d", &a);
-
-    mo solver(A);
-    vector<mo_query> queries(Q);
-
-    for (mo_query &q : queries) {
-        scanf("%d %d", &q.start, &q.end);
-        q.start--;
-    }
-
-    vector<mo_answer> answers = solver.solve(queries);
-
-    for (mo_answer &answer : answers)
-        printf("%d\n", answer);
+bool comp(struct data &d1, struct data &d2)
+{
+	int b1 = d1.l / SZ;
+	int b2 = d2.l / SZ;
+	if(b1 != b2)
+		return b1 < b2;
+	else
+		return (b1 & 1) ? d1.r < d2.r : d1.r > d2.r;
 }
+
+inline void add(int x)
+{	
+	cur -= 1LL * freq[x] * freq[x] * x;
+	freq[x]++;
+	cur += 1LL * freq[x] * freq[x] * x;
+}
+
+inline void remove(int x)
+{
+	cur -= 1LL * freq[x] * freq[x] * x;
+	freq[x]--;
+	cur += 1LL * freq[x] * freq[x] * x;
+}
+
+void mo()
+{
+	sort(qr + 1, qr + q + 1, comp);
+	int l = 1, r = 0;
+	cur = 0;
+	for(int i=1;i<=q;i++)
+	{
+		while(l < qr[i].l) remove(a[l++]);
+		while(l > qr[i].l) add(a[--l]);
+		while(r < qr[i].r) add(a[++r]);
+		while(r > qr[i].r) remove(a[r--]);
+		ans[qr[i].idx] = cur;
+	}
+}
+
+//From ashishgup
