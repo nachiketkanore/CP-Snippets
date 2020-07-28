@@ -61,6 +61,10 @@ void generate(int x) {
 
 5. Main problem is generating numbers when X is quite low (like < 200 or so)
 
+Problems on similar concepts:
+https://www.spoj.com/problems/MULTII/
+https://codeforces.com/contest/1070/problem/A
+
 */
 
 int32_t main(){
