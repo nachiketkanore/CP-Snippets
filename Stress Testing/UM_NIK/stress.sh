@@ -1,10 +1,12 @@
 #!/bin/bash
 
+echo 'Compiling files'
 g++ -O2 -std=c++17 -o sol sol.cpp
 g++ -O2 -std=c++17 -o brute brute.cpp
 g++ -O2 -std=c++17 -o gen gen.cpp
+echo 'Compilation done'
 
-for((i=0; i<1000;++i))
+for((i = 1; i <= 100; ++i))
 do
   ./gen > testcase
   ./brute < testcase > ans1
@@ -15,6 +17,13 @@ do
       echo $i OK
   else
       echo $i WA
+      echo $'TESTCASE:'
+      cat testcase
+      echo $'\nCORRECT ANSWER:'
+      cat ans1
+      echo $'\nYOUR ANSWER:'
+      cat ans2
+      echo $'\n\n'
       exit
   fi
 done
