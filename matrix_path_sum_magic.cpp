@@ -1,4 +1,4 @@
-
+// https://www.hackerearth.com/practice/algorithms/dynamic-programming/2-dimensional/practice-problems/algorithm/help-him-9659b063/description/
 const int N = 1003;
 int dp[N][N];
 
