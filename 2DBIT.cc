@@ -1,5 +1,11 @@
+const int SZ=2000;
 struct BIT2D { 
     int bit[SZ+1][SZ+1];
+    BIT2d(int n, int m) {
+        for (int i = 0; i <= n; i++)
+            for (int j = 0; j <= m; j++)
+               bit[i][j] = 0;
+    }
     void upd(int X, int Y, int val) {
         for (; X <= SZ; X += (X&-X))
             for (int Y1 = Y; Y1 <= SZ; Y1 += (Y1&-Y1))
