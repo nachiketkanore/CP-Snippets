@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+memset(${1:dp}, ${2:-1}, sizeof(${1:dp}));
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>memset</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

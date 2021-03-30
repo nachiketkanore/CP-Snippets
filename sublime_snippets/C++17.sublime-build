@@ -1,0 +1,9 @@
+{
+// "cmd" : ["g++ -std=c++17 $file_name -o $file_base_name && timeout 6s ./$file_base_name <input.txt > output.txt 2> error.txt"], 
+"cmd" : ["g++ -std=c++17 -g -Wall -Wextra -Wshadow -Wformat=2 -Wfloat-equal -O2 -D DEBUG $file_name -o $file_base_name && timeout 6s ./$file_base_name < ~/.nk/in > ~/.nk/out 2> ~/.nk/err"], 
+// "cmd" : ["g++ -std=c++17 -g -Wall -Wextra -Wshadow -Wformat=2 -Wfloat-equal -O2 $file_name -o $file_base_name && timeout 6s ./$file_base_name <input.txt > output.txt 2> error.txt"], 
+// "cmd" : ["g++ -std=c++17 -Wall -Wextra -pedantic -std=c++11 -O2 -Wshadow -Wformat=2 -Wfloat-equal -Wconversion -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -D_FORTIFY_SOURCE=2 -fsanitize=address -fsanitize=undefined -fno-sanitize-recover -fstack-protector $file_name -o $file_base_name && timeout 6s ./$file_base_name <input.txt > output.txt 2> error.txt"], 
+"selector" : "source.c",
+"shell": true,
+"working_dir" : "$file_path"
+}

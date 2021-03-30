@@ -1,0 +1,26 @@
+<snippet>
+	<content><![CDATA[
+class Solution {
+private:
+
+public:
+	Solution() {
+		input();
+		solve();
+	}
+	void input() {
+		
+	}
+	void solve() {
+		
+	}
+	~Solution() {
+		
+	}
+};
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>solution</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+#include <chrono>
+#include <random>
+#include <cmath>
+#include <queue>
+#include <cstdio>
+#include <cstdlib>
+#include <set>
+#include <map>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>headers</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

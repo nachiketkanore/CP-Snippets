@@ -1,0 +1,36 @@
+<snippet>
+	<content><![CDATA[
+int factmod[N];
+
+void pre(){
+    factmod[0] = 1;
+    for(int i = 1; i < N; i++)
+        factmod[i] = factmod[i - 1] * i % mod;
+}
+
+int power(int a, int b){
+    int ret = 1;
+    a %= mod;
+    while(b > 0){
+        if(b % 2)
+            ret = ret * a % mod;
+        b /= 2;
+        a = a * a % mod;
+    }
+    return ret;
+}
+
+int nCr(int n, int r){
+    if(r > n)   return 0;
+    int num = factmod[n];
+    int deno = factmod[n - r] * factmod[r] % mod;
+    deno = power(deno, mod - 2);
+    int ans = num * deno % mod;
+    return ans;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>ncr</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

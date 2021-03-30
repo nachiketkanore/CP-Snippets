@@ -1,0 +1,5 @@
+[
+	{ "keys": ["shift+enter"], "command": "build", "args": {"select": true} },
+	{ "keys": ["ctrl+shift+enter"], "command": "exec", "args": { "shell_cmd": "~/CP/create.sh" } },
+	 { "keys": ["ctrl+shift+r"], "command": "reindent"},
+]

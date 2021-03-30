@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+long long gcd(long long a, long long b) { 
+    if(a == 0 && b == 0) return 0;
+    return b == 0 ? a : gcd(b, a % b); 
+}
+long long lcm(long long a, long long b) { return a / gcd(a, b) * b; }
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>gcdlcm</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

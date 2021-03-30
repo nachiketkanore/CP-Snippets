@@ -1,0 +1,17 @@
+{
+	"color_scheme": "Packages/Color Scheme - Default/Monokai.sublime-color-scheme",
+	"font_face": "monaco",
+	"font_options":
+	[
+	],
+	"font_size": 13,
+	"ignored_packages":
+	[
+		"Anaconda",
+		"EasyClangComplete",
+		"Jedi - Python autocompletion",
+		"KiteSublime",
+		"Vintage"
+	],
+	"theme": "gruvbox.sublime-theme"
+}

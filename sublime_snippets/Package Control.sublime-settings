@@ -1,0 +1,16 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Anaconda",
+		"EasyClangComplete",
+		"gruvbox",
+		"Jedi - Python autocompletion",
+		"Package Control",
+		"SublimeLinter",
+		"SublimeLinter-gcc"
+	]
+}
