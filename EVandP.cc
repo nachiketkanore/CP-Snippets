@@ -17,3 +17,5 @@ polynomials idea, power of polynomial
 https://www.codechef.com/problems/EXPTPROD
 https://www.codechef.com/viewsolution/45136112
 
+simple problem on expressing EV as sum of variable to simply function
+https://www.hackerrank.com/challenges/bday-gift/problem
