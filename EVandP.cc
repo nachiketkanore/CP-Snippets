@@ -19,3 +19,15 @@ https://www.codechef.com/viewsolution/45136112
 
 simple problem on expressing EV as sum of variable to simply function
 https://www.hackerrank.com/challenges/bday-gift/problem
+
+
+To read / to do :
+https://www.spoj.com/problems/ADASEA/
+https://codeforces.com/blog/entry/81565#comment-682030
+https://codeforces.com/blog/entry/87941
+https://codeforces.com/blog/entry/88096
+https://codeforces.com/blog/entry/62189
+https://codeforces.com/blog/entry/8771
+https://codeforces.com/blog/entry/80355
+https://codeforces.com/blog/entry/76467
+atcoder edu dp : J - sushi - explanation - https://discuss.codechef.com/t/how-to-solve-this-problem/50519/12
