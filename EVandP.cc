@@ -31,3 +31,5 @@ https://codeforces.com/blog/entry/8771
 https://codeforces.com/blog/entry/80355
 https://codeforces.com/blog/entry/76467
 atcoder edu dp : J - sushi - explanation - https://discuss.codechef.com/t/how-to-solve-this-problem/50519/12
+https://www.math.ucdavis.edu/~gravner/MAT135A/resources/chpr.pdf
+https://codeforces.com/blog/entry/87941?#comment-764634 <--- imp
