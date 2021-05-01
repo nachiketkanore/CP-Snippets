@@ -20,6 +20,8 @@ https://www.codechef.com/viewsolution/45136112
 simple problem on expressing EV as sum of variable to simply function
 https://www.hackerrank.com/challenges/bday-gift/problem
 
+linearity of EV : (applications)
+https://www.quora.com/What-are-the-best-applications-of-linearity-of-expectation
 
 To read / to do :
 https://www.spoj.com/problems/ADASEA/
