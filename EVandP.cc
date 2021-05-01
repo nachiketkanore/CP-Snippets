@@ -23,6 +23,9 @@ https://www.hackerrank.com/challenges/bday-gift/problem
 linearity of EV : (applications)
 https://www.quora.com/What-are-the-best-applications-of-linearity-of-expectation
 
+problems : 
+https://math.stackexchange.com/questions/2633273/whats-the-expected-number-of-times-i-have-to-roll-two-die-until-they-both-sum
+
 To read / to do :
 https://www.spoj.com/problems/ADASEA/
 https://codeforces.com/blog/entry/81565#comment-682030
