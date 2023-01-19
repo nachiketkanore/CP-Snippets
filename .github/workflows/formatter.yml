@@ -1,0 +1,11 @@
+name: Code Formatter
+on:
+  push:
+jobs:
+  clang-format:
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@v2
+      - uses: AutoModality/action-ros-clang-format@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
