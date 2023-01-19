@@ -2,8 +2,10 @@
 #include <ext/pb_ds/tree_policy.hpp>
 using namespace __gnu_pbds;
 
-//Use pair<int,int> to support multiset like features
-typedef tree<pair<int,int>, null_type, less<pair<int,int>>, rb_tree_tag, tree_order_statistics_node_update> oset;
+// Use pair<int,int> to support multiset like features
+typedef tree<pair<int, int>, null_type, less<pair<int, int>>, rb_tree_tag,
+             tree_order_statistics_node_update>
+    oset;
 
 oset curr;
 

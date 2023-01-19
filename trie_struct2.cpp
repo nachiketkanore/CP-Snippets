@@ -2,9 +2,8 @@ struct Trie {
   // These are freed when the Trie is destroyed.
   vector<unique_ptr<Trie>> children = vector<unique_ptr<Trie>>(26);
   bool word = false;
- 
-  template <typename It>
-  void insert(It begin, It end) {
+
+  template <typename It> void insert(It begin, It end) {
     if (begin == end) {
       word = true;
       return;
@@ -17,9 +16,8 @@ struct Trie {
     }
     children[index]->insert(begin + 1, end);
   }
- 
-  template <typename It>
-  bool contains(It begin, It end) const {
+
+  template <typename It> bool contains(It begin, It end) const {
     if (begin == end) {
       return word;
     }
@@ -29,12 +27,11 @@ struct Trie {
     }
     return children[index]->contains(begin + 1, end);
   }
- 
+
   // 0 - Does not.
   // 1 - This is the prefix of something.
   // 2 - Full match.
-  template <typename It>
-  int contains_as_prefix(It begin, It end) const {
+  template <typename It> int contains_as_prefix(It begin, It end) const {
     if (begin == end) {
       if (word) {
         return 2;
@@ -48,7 +45,7 @@ struct Trie {
     }
     return children[index]->contains_as_prefix(begin + 1, end);
   }
- 
+
   i64 words() const {
     i64 words = 0;
     if (word) {
@@ -61,7 +58,7 @@ struct Trie {
     }
     return words;
   }
- 
+
   int children_count() const {
     int count = 0;
     for (const unique_ptr<Trie> &child : children) {
@@ -71,7 +68,7 @@ struct Trie {
     }
     return count;
   }
- 
+
   void branch_count(unordered_map<i64, i64> &m, i64 branches = 0) const {
     if (word) {
       m[branches]++;
